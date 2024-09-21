@@ -8,13 +8,13 @@
 import numpy as np  # type: ignore
 #test
 #Gene 1 Alleles. a,b -> AABB 
-a ="Bb"
-b ="Rr"
-
+a =str(input("Input gene 1 allele 1:"))
+b =str(input(("Input Gene 1 Alelle 2 (current gene: " + a + "XX): ")))
+print("Gene 1: ",(a + b))
 #Gene 2 Alleles. c,d -> CCDD
-c ="Bb"
-d ="Rr"
-
+c =str(input("Input gene 2 allele 1:"))
+d =str(input(("Input Gene 2 Alelle 2 (current gene: " + c + "XX): ")))
+print("Gene 2: ",(c + d))
 # First Letter
 # set this as the letter of the first gene. 
 first=a[0]
@@ -54,6 +54,7 @@ def FOIL(a,b):
 def GLT (a): #Fixes letter arrangement, rather, arranges the genes together. 
     letter_1 = [] #First letter in arrangement. Depenent on "first" variable.
     letter_2 = [] #Second letter in arrangement. 
+    
     for i in a: 
         if i.upper() == first.upper():
             letter_1.append(i)
@@ -61,21 +62,41 @@ def GLT (a): #Fixes letter arrangement, rather, arranges the genes together.
             letter_2.append(i)    
     letter_1 = Dom_fix(letter_1) 
     letter_2 = Dom_fix(letter_2)
-    return letter_1[0] + letter_1[1] + letter_2[0] + letter_2[1] #Takes the first two letters of letter_1 then merges then with letter_2 in a str.
+    if len(a) == 2: #special case for 2 length characters, such as maybe our input arrays
+        return letter_1[0] + letter_2[0]
+    else:
+        return letter_1[0] + letter_1[1] + letter_2[0] + letter_2[1] #Takes the first two letters of letter_1 then merges then with letter_2 in a str.
 
-def pennet_square (a,b):  
+def pennet_square (A,B):  
     # define A as the top row, and B as the side column
     # for a 2x1 [ab] * 1x2 [cd] matrix, the resulting 2x2 matrix is: 
     # ac ad bc bd or 1,1 x 1,1  1,2 x 1.1 2,1 x 1
     # iterate Ys then X's 
     to_output = []
-    print(a, " x ", b)
+    top_display = []
+    top_display_table = []
+    ticker = 0
+    side_display = []
+    spacing = ""
+    for i in B: 
+        top_display_table.append((spacing + GLT(i)))
+        top_display.append(GLT(i))
+        spacing = spacing + " "
+    for j in A: 
+        side_display.append(GLT(j))
+        
+
+    print(a+b, " x ", c+d, "cross Via FOIL leads to:")
+    print(side_display, " x ", top_display)
     print("---------------------")
-    print(" X    ", a)
-    for x in b:
-        to_output.append(x)
+
+    print(" X    ", top_display_table)
+    for x in A:
+       # print(x)
+        to_output.append(GLT(x))
+        ticker =+ 1 
         #print(b)
-        for y in a:
+        for y in B:
             #print(x)
             to_output.append(GLT(y + x))
 
@@ -83,4 +104,7 @@ def pennet_square (a,b):
         to_output = []
     
 #function proper         
-pennet_square(FOIL(a,d),FOIL(b,c))
+pennet_square(FOIL(c,d),FOIL(a,b))
+
+##print(FOIL(a,d))
+#print(FOIL(b,c))
