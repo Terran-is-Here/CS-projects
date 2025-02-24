@@ -62,7 +62,7 @@ def GLT (a): #Fixes letter arrangement, rather, arranges the genes together.
         else: 
             letter_2.append(i)    
     letter_1 = Dom_fix(letter_1) 
-    letter_2 = Dom_fix(letter_2)
+    letter_2 = Dom_fix(letter_2) 
     if len(a) == 2: #special case for 2 length characters, such as maybe our input arrays
         return letter_1[0] + letter_2[0]
     else:
