@@ -1,4 +1,7 @@
 # Exercise #01
+# Note: This is a slightly modified file from the submission date because for some reason the sentence printout in Q13 didnt copy over in the paste (very odd)
+# Everything else is unaltered; I just changed the print statement pertaining to the thing (\t still included.)\
+# If you need to see the version history version of this file, please just ask me :)
 
 subjects = ["SPH3UR","AWQ3MR", "ICS3UR", "SCH3UR"]
 rooms = ["248", "124", "165","250"]
@@ -42,11 +45,11 @@ print("Pablo Luis Cauton \n Grade 11 \n St.Paul High School")
 print("Average of 87, 79 and 92 is:", (87+79+92)/3)
 
 # 12 - Write a Python program to print the numbers 1, 2, 3, 4, 5 on the same line, separated by a -.
-# ??? i mean, i get doing it by the quotations but the simplest way works the best!
-print("1-2-3-4-5")
+# print("1-2-3-4-5") ???, this should work the same but ill use an escape character for funsies. 
+print(1,2,3,4,5,sep="-")
 
-# 13 - Print the following sentence, but ensure there is a tab space (\t) before the word "Python": 
-print("The sentence given here didnt appear, but atleast \t \"Python\" was here to save the day!")
+# 13 - Print the following sentence "I am learning Python!", but ensure there is a tab space (\t) before the word "Python":  
+print("I am learning \t Python!")
 
 # 14 - Create an ASCII-style drawing using escape characters (\t, \n, quotes, and backslashes). Use at least 5 print() lines to create a house, smiley face, or simple pattern.
 
