@@ -1,0 +1,41 @@
+import sys
+hdiv = "="*10
+def EMInput(input_string, return_type ="str", parameters={}, error_message = "Error in input. Please try again."): #error-managed number input
+    formatted_string = input_string.format(**parameters) #unfolds parameters dictionary as arguments to .format()
+    while True:
+        try: 
+            inputted_value = eval(f"{return_type}(input(formatted_string))")
+        except KeyboardInterrupt: 
+            print("\n Ending Program due to KeyboardInterrupt.")
+            sys.exit() #re-implements forced exit on Ctrl+C KeyboardInterrupt errors.
+        except ValueError: 
+            print(error_message.format(**parameters)) # will handle type-matching errors, like inputting a string to a int()
+        else:
+            return inputted_value
+username = "placeholder"
+print("\n")
+print(f"{hdiv} Question 5 {hdiv}")
+print(f"Traffic Ticket thingy")
+
+speed = EMInput("What speed were you travelling (km/hr)?: ", "float") 
+Birthday = EMInput("{username}, is it your birthday today (y/n)?: ", "str", {"username":username}) 
+class speed_limits:
+    lower = 80 #lower speed limit for 50$
+    higher = 100 #higher speed limit for 200$
+    birthday_modifier = 5 #birthday speed modifier
+if Birthday.lower() == "y": 
+    print(f"Happy birthday {username}!")
+    if speed <= (speed_limits.lower + speed_limits.birthday_modifier): 
+        print(f"You dont have to worry about getting a ticket {username}!")
+    elif speed > (speed_limits.lower + speed_limits.birthday_modifier) and speed <= (speed_limits.higher + speed_limits.birthday_modifier): 
+        print(f"Sorry {username}, you will get a 50$ ticket :(")
+    elif speed > (speed_limits.higher + speed_limits.birthday_modifier):
+        print(f"Sorry {username}, you will have to pay a 200$ ticket.")
+else:
+    if speed <= (speed_limits.lower): 
+        print(f"You dont have to worry about getting a ticket {username}!")
+    elif speed > (speed_limits.lower) and speed <= (speed_limits.higher): 
+        print(f"Sorry {username}, you will get a 50$ ticket :(")
+    elif speed > (speed_limits.higher):
+        print(f"Sorry {username}, you will have to pay a 200$ ticket.")
+

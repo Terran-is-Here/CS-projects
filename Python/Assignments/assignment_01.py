@@ -17,7 +17,7 @@ print()
 # 02 - Write a program that asks the user for 3 numbers then outputs the average of those 3 numbers rounded to one decimal place.
 print(f"{'='*5} Question 2 {'='*5}")
 print("Numerical Averages")
-numbers_to_calculate = 6 #setting, can be changed with different numbers
+numbers_to_calculate = 3 #setting, can be changed with different numbers
 print(f"Give me {numbers_to_calculate} numbers to calculate the average of!")
 values = []
 sum = 0
