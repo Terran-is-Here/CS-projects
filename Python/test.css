@@ -1,0 +1,96 @@
+/* This is the code (Line 3) that changes the font */
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
+
+/*Dark Mode Transition Code*/
+:root {
+--darkmodeTransition: filter 0.5s ease-in-out; /* Adjust the duration and timing function as needed */
+ background-color: transparent !important; /* Or your preferred light mode background color */
+} 
+* {
+font-family: "Balthazar", serif;
+  font-family: "Balthazar", serif;
+font-size: 1.0em
+}
+body, .category-gallery-item, .snippet, .text, .wikia-button, .wikia-single-button a, .wikia-menu-button, input, .button {
+    font-family: "Balthazar", serif;;
+}
+/*Staff Names*/
+a[href="/wiki/User:CharaOfTheHiddenStone"]{
+	color: #41e8dd;
+}
+
+a[href="/wiki/User:Darkshadow56556"],
+a[href="/wiki/User:Lord Bingy"],
+a[href="/wiki/User:Fartman1314"],
+a[href="/wiki/User:Sanekfr"],
+a[href="/wiki/User:YourLocalIdiot123"] {
+	color: #5177dc;
+}
+
+/* Background Transparency */
+#content {
+background: rgba(233, 233, 233, 0.8) !important
+}
+
+/* User Tools Fix */
+#user-tools:hover .mw-portlet-body {
+    display:block
+}
+
+html {
+  transition: var(--darkmodeTransition);
+}
+
+.imgcell {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+}
+
+.imgvanish {
+   transition: 0.5s;
+    position:absolute;
+    z-index:1;
+}
+
+.imgcell:hover .imgvanish {
+    opacity:0;
+}
+
+.imggrow {
+    transition: .15s ease;
+}
+
+.imggrow:hover {
+    transform: scale(1.075)
+}
+/*tooltip css*/
+#tooltip-wrapper .main-tooltip {
+border: 2px solid black;
+background: rgba(100, 100, 100, 0.90);
+padding: 10px;
+display: inline-block; 
+width: 350px !important;
+word-break: normal; 
+font-size: 0.8em; 
+color: white;
+}
+* {
+font-family: "Balthazar", serif;
+  font-family: "Balthazar", serif;
+font-size: 1.02em
+}
+
+.mw-highlight.mw-highlight-lang-lua.mw-content-ltr.mw-highlight-lines > pre * {
+  filter: invert(0) !important;
+}
+
+.stat_text_outline{text-shadow: -0.75px -0.75px 0 #000, 0.75px -0.75px 0 #000, -0.75px 0.75px 0 #000, 1px 1px 0 #000;}
+
+html.client-darkmode span.stat_text_outline{text-shadow: -0.75px -0.75px 0 #c4c4c4, 0.75px -0.75px 0 #c4c4c4, -0.75px 0.75px 0 #c4c4c4, 0.75px 0.75px 0 #c4c4c4;}
+
+#user-tools:hover .mw-portlet-body {
+    display:block
+}
